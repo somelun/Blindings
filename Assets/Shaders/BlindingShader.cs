@@ -27,7 +27,7 @@ public class BlindingShader : MonoBehaviour
     }
 
     private void Start() {
-        pixelStep = 0.0f;
+        pixelStep = 0.5f;
     }
 
     private void OnRenderImage(RenderTexture source, RenderTexture destination) {
@@ -42,7 +42,7 @@ public class BlindingShader : MonoBehaviour
         Graphics.Blit(source, destination, mat);
 
         if (GameState.Instance.PixelLevel > 256.0f) {
-            pixelStep = 0.2f;
+            pixelStep = 1.0f;
         }
 
         if (GameState.Instance.PixelLevel > 32.0f) {

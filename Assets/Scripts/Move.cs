@@ -30,7 +30,7 @@ public class Move : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         Destroy(other.gameObject);
-        GameState.Instance.PixelLevel += 8;
+        GameState.Instance.PixelLevel = Mathf.Min(1024, GameState.Instance.PixelLevel + 100);
     }
 
 }
