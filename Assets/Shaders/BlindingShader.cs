@@ -26,10 +26,6 @@ public class BlindingShader : MonoBehaviour
         }
     }
 
-    private void Start() {
-        pixelStep = 0.5f;
-    }
-
     private void OnRenderImage(RenderTexture source, RenderTexture destination) {
         if(shader == null) {
 			return;
@@ -41,12 +37,14 @@ public class BlindingShader : MonoBehaviour
         mat.SetFloat("_Pixelization", GameState.Instance.PixelLevel);
         Graphics.Blit(source, destination, mat);
 
-        if (GameState.Instance.PixelLevel > 256.0f) {
-            pixelStep = 1.0f;
+        if (GameState.Instance.PixelLevel < 256.0f) {
+            GameState.Instance.PixelStep = 0.5f;
+        } else if (GameState.Instance.PixelStep > 0.0f) {
+            GameState.Instance.PixelStep = 2.0f;
         }
 
         if (GameState.Instance.PixelLevel > 32.0f) {
-            GameState.Instance.PixelLevel -= pixelStep;
+            GameState.Instance.PixelLevel -= GameState.Instance.PixelStep;
         }
     }
 

@@ -7,6 +7,8 @@ public class Move : MonoBehaviour {
     public float jumpSpeed = 6.0f;
     public float gravity = 20.0f;
 
+    public AudioClip collectSound;
+
     private Vector3 moveDirection = Vector3.zero;
     private CharacterController controller;
 
@@ -31,6 +33,7 @@ public class Move : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         Destroy(other.gameObject);
         GameState.Instance.PixelLevel = Mathf.Min(1024, GameState.Instance.PixelLevel + 100);
+        GetComponent<AudioSource>().PlayOneShot(collectSound, 0.7f);
     }
 
 }
