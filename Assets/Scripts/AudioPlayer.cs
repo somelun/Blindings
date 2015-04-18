@@ -6,7 +6,7 @@ using System.Collections;
 public class AudioPlayer : MonoBehaviour {
 
 	private void Start() {
-		GetComponent<AudioSource>().Play();
+		// GetComponent<AudioSource>().Play();
 	}
 	
 	private void Update() {

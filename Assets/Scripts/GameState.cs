@@ -6,9 +6,9 @@ public class GameState {
 	protected GameState() {}
 	private static GameState _instance = null;
 
+	private float _pixelLevel;
 	private bool _isGasAtomized;
-
-	public GameObject player;
+	private GameObject _player;
 
 	public static GameState Instance { 
 		get {
@@ -22,6 +22,14 @@ public class GameState {
 
     private void Init() {
     	_isGasAtomized = false;
+    	_pixelLevel = 32.0f;
+    }
+
+    public void StartGame() {
+    	_player = GameObject.Find("Player");
+
+    	_player.GetComponent<Move>().enabled = true;
+    	_player.GetComponent<MouseLook>().enabled = true;
     }
 
     public bool isGasAtomized {
@@ -33,10 +41,12 @@ public class GameState {
         }
     }
 
-    public void StartGame() {
-    	player = GameObject.Find("Player");
-
-    	player.GetComponent<Move>().enabled = true;
-    	player.GetComponent<MouseLook>().enabled = true;
+    public float PixelLevel {
+    	get {
+            return _pixelLevel;
+        }
+        set {
+            _pixelLevel = value;
+        }	
     }
 }

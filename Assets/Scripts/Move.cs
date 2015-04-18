@@ -28,4 +28,9 @@ public class Move : MonoBehaviour {
         controller.Move(moveDirection * Time.deltaTime);
     }
 
+    private void OnTriggerEnter(Collider other) {
+        Destroy(other.gameObject);
+        GameState.Instance.PixelLevel += 8;
+    }
+
 }
