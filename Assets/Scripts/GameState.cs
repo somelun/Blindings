@@ -22,7 +22,7 @@ public class GameState {
 
     private void Init() {
     	_isGasAtomized = false;
-    	_pixelLevel = 32.0f;
+    	_pixelLevel = 1024.0f;
     }
 
     public void StartGame() {

@@ -8,6 +8,7 @@ public class MouseLook : MonoBehaviour {
 		MouseX = 1, 
 		MouseY = 2
 	}
+    
 	public RotationAxes axes = RotationAxes.MouseXAndY;
  	public float sensitivityX = 10.0f;
  	public float sensitivityY = 10.0f;
