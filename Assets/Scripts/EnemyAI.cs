@@ -3,23 +3,25 @@ using System.Collections;
 
 public class EnemyAI : MonoBehaviour {
 
-	public Transform player;
-	public float viewDistance;
-
+	private float _viewDistance;
 	private RaycastHit _raycastHit;
+	private GameObject _player;
 
 	private void Start() {
-		viewDistance = 15.0f;
+		_viewDistance = 10.0f;
+		_player = GameObject.Find("Player");
 	}
 	
 	private void Update() {
-		transform.LookAt(player);
-		if (Physics.Raycast(transform.position, player.transform.position - transform.position, out _raycastHit, viewDistance)) {
-			Debug.DrawLine(transform.position, player.transform.position, Color.red);
-			Debug.Log("mek mek mek");
-			// if (_raycastHit.collider.gameObject == player) {
-			// 	Debug.Log("I see you!");
-			// }
+		transform.LookAt(_player.transform);
+		if (Physics.Raycast(transform.position, _player.transform.position - transform.position, out _raycastHit, _viewDistance)) {
+
+			Debug.DrawLine(transform.position, _player.transform.position, Color.red);
+			Debug.Log(_raycastHit.collider.gameObject);
+
+			if (_raycastHit.collider.gameObject == _player) {
+				Debug.Log("I see you!");
+			}
 		}
 	}
 }
