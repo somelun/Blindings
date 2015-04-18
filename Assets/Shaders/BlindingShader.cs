@@ -14,6 +14,9 @@ public class BlindingShader : MonoBehaviour
 	
     private Material _material;
 
+    private float pixelLevel;
+    private float pixelStep;
+
     protected Material material {
         get {
             if(_material == null) {
@@ -24,6 +27,11 @@ public class BlindingShader : MonoBehaviour
         }
     }
 
+    private void Start() {
+        pixelLevel = 1024.0f;
+        pixelStep = 0.0f;
+    }
+
     private void OnRenderImage(RenderTexture source, RenderTexture destination) {
         if(shader == null) {
 			return;
@@ -32,8 +40,12 @@ public class BlindingShader : MonoBehaviour
         Material mat = material;
 		mat.SetFloat("_Contrast", contrast);
 		mat.SetFloat("_Br", brightness);
-        mat.SetFloat("_Pixelization", 16.0f);
+        mat.SetFloat("_Pixelization", pixelLevel);
         Graphics.Blit(source, destination, mat);
+
+        if (pixelLevel > 48) {
+            pixelLevel -= pixelStep;
+        }
     }
 
     void OnDisable() {
