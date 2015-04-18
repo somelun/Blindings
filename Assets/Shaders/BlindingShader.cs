@@ -28,7 +28,7 @@ public class BlindingShader : MonoBehaviour
     }
 
     private void Start() {
-        pixelLevel = 256.0f;
+        pixelLevel = 1024.0f;
         pixelStep = 0.0f;
     }
 
@@ -43,11 +43,11 @@ public class BlindingShader : MonoBehaviour
         mat.SetFloat("_Pixelization", pixelLevel);
         Graphics.Blit(source, destination, mat);
 
-        if (pixelLevel > 256) {
+        if (pixelLevel > 256.0f) {
             pixelStep = 0.2f;
         }
 
-        if (pixelLevel > 48) {
+        if (pixelLevel > 32.0f) {
             pixelLevel -= pixelStep;
         }
     }
