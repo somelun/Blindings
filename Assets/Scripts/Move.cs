@@ -30,6 +30,10 @@ public class Move : MonoBehaviour {
         controller.Move(moveDirection * Time.deltaTime);
     }
 
+    private void FixedUpdate() {
+        //
+    }
+
     private void OnTriggerEnter(Collider other) {
         Destroy(other.gameObject);
         GameState.Instance.PixelLevel = Mathf.Min(1024, GameState.Instance.PixelLevel + 100);

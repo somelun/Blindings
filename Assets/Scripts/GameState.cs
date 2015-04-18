@@ -33,7 +33,7 @@ public class GameState {
     	_player.GetComponent<Move>().enabled = true;
     	_player.GetComponent<MouseLook>().enabled = true;
 
-    	_pixelStep = 2.0f;
+    	_pixelStep = 0.0f;
     }
 
     public bool isGasAtomized {
