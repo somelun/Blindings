@@ -6,7 +6,6 @@ public class GameState {
 	protected GameState() {}
 	private static GameState _instance = null;
 
-	private bool _isGasAtomized;
 	private GameObject _player;
 
 	private float _pixelLevel;
@@ -23,7 +22,6 @@ public class GameState {
     }
 
     private void Init() {
-    	_isGasAtomized = false;
     	_pixelLevel = 1024.0f;
     	_pixelStep = 0.0f;
     }
@@ -40,23 +38,13 @@ public class GameState {
         if (isWin) {
             Debug.Log("win");
         } else {
-            this.Init();
-            Application.LoadLevel("EmptyScene");
+            this.Restart();
         }
     }
 
     public void Restart() {
         this.Init();
         Application.LoadLevel(Application.loadedLevel);
-    }
-
-    public bool isGasAtomized {
-    	get {
-            return _isGasAtomized;
-        }
-        set {
-            _isGasAtomized = value;
-        }
     }
 
     public float PixelLevel {
