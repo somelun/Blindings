@@ -35,6 +35,9 @@ public class Move : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag != "Pill") {
+            return;
+        }
         Destroy(other.gameObject);
         GameState.Instance.PixelLevel = Mathf.Min(1024, GameState.Instance.PixelLevel + 50);
         GetComponent<AudioSource>().PlayOneShot(collectSound, 0.7f);

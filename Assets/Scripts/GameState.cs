@@ -36,6 +36,19 @@ public class GameState {
     	_pixelStep = 2.0f;
     }
 
+    public void GameOver(bool isWin) {
+        if (isWin) {
+            Debug.Log("win");
+        } else {
+            Debug.Log("lose");
+        }
+    }
+
+    public void Restart() {
+        this.Init();
+        Application.LoadLevel (Application.loadedLevel);
+    }
+
     public bool isGasAtomized {
     	get {
             return _isGasAtomized;

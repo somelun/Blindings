@@ -43,7 +43,7 @@ public class BlindingShader : MonoBehaviour
             GameState.Instance.PixelStep = 2.0f;
         }
 
-        if (GameState.Instance.PixelLevel > 24.0f) {
+        if (GameState.Instance.PixelLevel > 30.0f) {
             GameState.Instance.PixelLevel -= GameState.Instance.PixelStep;
         }
     }

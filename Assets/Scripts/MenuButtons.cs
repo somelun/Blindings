@@ -10,4 +10,10 @@ public class MenuButtons : MonoBehaviour {
 
 		GameState.Instance.StartGame();
 	}
+
+	private void Update() {
+		if (Input.GetButton("R")) {
+			Application.LoadLevel ("GameScene");
+		}
+	}
 }
