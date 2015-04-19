@@ -20,7 +20,7 @@ public class MenuButtons : MonoBehaviour {
 	public void PlayButtonClick() {
 		// GameObject.Find("Message").SetActive(true);
 		// GameObject.Find("Message2").SetActive(true);
-		
+
 		Destroy(GameObject.Find("Title"));
 		Destroy(GameObject.Find("PlayButton"));
 		Destroy(GameObject.Find("Instructions"));
@@ -32,6 +32,10 @@ public class MenuButtons : MonoBehaviour {
 
 	private void Update() {
 		if (Input.GetButton("R")) {
+			GameState.Instance.Restart();
+		}
+
+		if (Input.GetKey("escape")) {
 			GameState.Instance.Restart();
 		}
 
