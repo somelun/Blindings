@@ -36,7 +36,7 @@ public class GameState {
 
     public void GameOver(bool isWin) {
         if (isWin) {
-            Debug.Log("win");
+            Application.LoadLevel("FinishScene");
         } else {
             this.Restart();
         }
@@ -44,7 +44,7 @@ public class GameState {
 
     public void Restart() {
         this.Init();
-        Application.LoadLevel(Application.loadedLevel);
+        Application.LoadLevel("GameScene");
     }
 
     public float PixelLevel {

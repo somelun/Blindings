@@ -25,8 +25,9 @@ public class MouseLook : MonoBehaviour {
  	Quaternion originalRotation;
 
  	private void Start() {
-    	if (GetComponent<Rigidbody>())
+    	if (GetComponent<Rigidbody>()) {
      		GetComponent<Rigidbody>().freezeRotation = true;
+        }
      	originalRotation = transform.localRotation;
  	}
 	
