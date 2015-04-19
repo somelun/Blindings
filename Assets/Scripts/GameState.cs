@@ -40,13 +40,14 @@ public class GameState {
         if (isWin) {
             Debug.Log("win");
         } else {
-            Debug.Log("lose");
+            this.Init();
+            Application.LoadLevel("EmptyScene");
         }
     }
 
     public void Restart() {
         this.Init();
-        Application.LoadLevel (Application.loadedLevel);
+        Application.LoadLevel(Application.loadedLevel);
     }
 
     public bool isGasAtomized {
