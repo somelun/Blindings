@@ -36,9 +36,11 @@ public class GameState {
 
     public void GameOver(bool isWin) {
         if (isWin) {
+            _pixelLevel = 1024.0f;
             Application.LoadLevel("FinishScene");
         } else {
-            this.Restart();
+            _pixelLevel = 1024.0f;
+            Application.LoadLevel("LooseScene");
         }
     }
 
