@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class GameState {
@@ -11,7 +12,7 @@ public class GameState {
 	private float _pixelLevel;
 	private float _pixelStep;
 
-	public static GameState Instance { 
+	public static GameState Instance {
 		get {
         	if(GameState._instance == null) {
         		GameState._instance = new GameState();
@@ -37,16 +38,16 @@ public class GameState {
     public void GameOver(bool isWin) {
         if (isWin) {
             _pixelLevel = 1024.0f;
-            Application.LoadLevel("FinishScene");
+            SceneManager.LoadScene("FinishScene");
         } else {
             _pixelLevel = 1024.0f;
-            Application.LoadLevel("LooseScene");
+            SceneManager.LoadScene("LooseScene");
         }
     }
 
     public void Restart() {
         this.Init();
-        Application.LoadLevel("GameScene");
+        SceneManager.LoadScene("GameScene");
     }
 
     public float PixelLevel {
@@ -55,7 +56,7 @@ public class GameState {
         }
         set {
             _pixelLevel = value;
-        }	
+        }
     }
 
     public float PixelStep {
@@ -64,7 +65,7 @@ public class GameState {
         }
         set {
             _pixelStep = value;
-        }	
+        }
     }
 
 }

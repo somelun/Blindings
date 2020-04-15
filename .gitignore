@@ -1,18 +1,20 @@
-.DS_Store
-Library
-Temp
-*.csproj
-*.pidb
-*.unityproj
-*.sln
-*.userprefs
-*sublime*
+# .DS_Store
+# Library
+# Temp
+# *.csproj
+# *.pidb
+# *.unityproj
+# *.sln
+# *.userprefs
+# *sublime*
 
 # =============== #
 # Unity generated #
 # =============== #
 Temp/
 Library/
+Logs/
+Packages/
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #

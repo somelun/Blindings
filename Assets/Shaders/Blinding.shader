@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 Shader "Custom/BlindingShader" {
     Properties {
         _MainTex ("Base (RGB)", 2D) = "white" {}
@@ -31,7 +33,7 @@ Shader "Custom/BlindingShader" {
 
             vert_out vert(appdata_base v) {
                 vert_out o;
-                o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+                o.pos = UnityObjectToClipPos(v.vertex);
                 o.uv = MultiplyUV(UNITY_MATRIX_TEXTURE0, v.texcoord);
 				o.scr_pos = ComputeScreenPos(o.pos);
                 return o;
