@@ -10,6 +10,6 @@ Kawabanga!
 
 # Update from 2020:
 
-I've decided to clean up this project. Its been updated it to modern Unity release. And the playable version is available [here].(https://somelun.github.io/blindings/)
+I've decided to clean up this project. Its been updated it to modern Unity release. And the playable version is available [here](https://somelun.github.io/blindings/).
 
-{{< figure src="image.png" >}}
+![](image.png)
