@@ -1,7 +1,5 @@
 # Blindings
 
-Game for Ludum Dare 32 (Theme: An Unconventional Weapon)
-
 You are the scientist in a maze with the new secret chemical weapon - PIXEL GAS!
 
 Try to escape from this hell alive, pick up blue pills to have temporary heal, avoid big red cubes, listen to the music.
